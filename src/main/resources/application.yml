@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/zxcdb
+    driver-class-name: org.postgresql.Driver
+    username: ${DB_POSTGRES_USERNAME:postgres}
+    password: ${DB_POSTGRES_PASSWORD:postgres}
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${keycloak.auth-server-url}/realms/${keycloak.realm}
+          jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
+
+keycloak:
+  auth-server-url: 111
+  realm: 111
+  resource: 111
+  client: 111
+  credentials:
+    secret: 111
